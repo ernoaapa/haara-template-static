@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — My Site</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .page-content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 24px;
+    }
+    .page-title {
+      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+    .page-lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .prose h2 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      margin-top: 36px;
+      margin-bottom: 12px;
+    }
+    .prose p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .prose a { color: var(--accent); text-decoration: none; }
+    .prose a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <span class="logo">✦ MySite</span>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="page-content">
+      <h1 class="page-title">About this site</h1>
+      <p class="page-lead">
+        This is a simple static website template. It's built with plain HTML and CSS —
+        no JavaScript frameworks, no build pipeline, no dependencies.
+      </p>
+      <div class="prose">
+        <h2>Getting started</h2>
+        <p>
+          Edit <code>index.html</code> and <code>style.css</code> to customise this site.
+          Add new pages by creating more <code>.html</code> files in the same folder.
+        </p>
+        <h2>How it runs</h2>
+        <p>
+          The platform serves these files with a simple HTTP server. Any changes you push
+          to your repository will be reflected immediately.
+        </p>
+        <h2>Going further</h2>
+        <p>
+          When you outgrow a static site, consider upgrading to the
+          <a href="#">Node.js / React</a> or <a href="#">Python</a> templates which support
+          server-side logic and dynamic content.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>Made with ♥ · <a href="index.html">Home</a></p>
+  </footer>
+</body>
+</html>

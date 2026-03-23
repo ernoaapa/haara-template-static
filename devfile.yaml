@@ -1,0 +1,21 @@
+schemaVersion: 2.2.0
+metadata:
+  name: static-web
+  language: html
+  projectType: static
+components:
+  - name: runtime
+    container:
+      image: node:20-alpine
+      mountSources: true
+      endpoints:
+        - name: http
+          targetPort: 3000
+commands:
+  - id: dev
+    exec:
+      component: runtime
+      commandLine: npx --yes serve -s . -l 3000
+      group:
+        kind: run
+        isDefault: true
