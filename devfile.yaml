@@ -6,12 +6,12 @@ metadata:
 components:
   - name: runtime
     container:
-      image: nginx:alpine
+      image: node:alpine
       mountSources: true
-      sourceMapping: /usr/share/nginx/html
+      sourceMapping: /app
       endpoints:
         - name: http
-          targetPort: 80
+          targetPort: 3000
   - name: production
     image:
       imageName: placeholder
@@ -22,7 +22,7 @@ commands:
   - id: dev
     exec:
       component: runtime
-      commandLine: nginx -g 'daemon off;'
+      commandLine: npx --yes live-server --port=3000 --no-browser /app
       group:
         kind: run
         isDefault: true
