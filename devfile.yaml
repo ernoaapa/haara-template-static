@@ -8,7 +8,6 @@ components:
     container:
       image: node:alpine
       mountSources: true
-      sourceMapping: /app
       endpoints:
         - name: http
           targetPort: 3000
@@ -22,7 +21,7 @@ commands:
   - id: dev
     exec:
       component: runtime
-      commandLine: npx --yes live-server --port=3000 --no-browser /app
+      commandLine: npx --yes live-server --port=3000 --no-browser .
       group:
         kind: run
         isDefault: true
