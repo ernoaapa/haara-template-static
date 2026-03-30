@@ -21,7 +21,11 @@ commands:
   - id: dev
     exec:
       component: runtime
-      commandLine: npx --yes live-server --port=3000 --no-browser .
+      # browser-sync serves from the current worktree (.) and watches the parent
+      # /projects directory with polling. When git-sync atomically replaces the
+      # /projects/current symlink, the parent directory mtime changes and
+      # browser-sync detects it, triggering an automatic browser refresh.
+      commandLine: npx --yes browser-sync start --server . --files "/projects" --poll 2000 --no-open --port 3000
       group:
         kind: run
         isDefault: true
